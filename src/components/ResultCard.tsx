@@ -39,10 +39,10 @@ const ResultCard = ({ title, result, category, description }: ResultCardProps) =
             </div>
 
             <div className="mt-4">
-                <div className="text-xs font-mono text-zinc-500 bg-black/30 p-2 rounded border border-zinc-800/50 mb-3 overflow-x-auto whitespace-nowrap">
-                    <span className="text-amber-500/70 mr-2">Math:</span> {result.math}
+                <div className="text-xs font-mono text-white/50 bg-black/30 p-2 rounded border border-zinc-800/50 mb-3 overflow-x-auto whitespace-nowrap">
+                    <span className="text-amber-500/70 mr-2 uppercase tracking-tighter">Calculation:</span> {result.math}
                 </div>
-                <div className="text-sm text-zinc-300 leading-relaxed italic border-l-2 border-amber-500/20 pl-4 py-1 whitespace-pre-wrap">
+                <div className="text-base text-white/90 leading-relaxed italic border-l-2 border-amber-500/20 pl-4 py-1 whitespace-pre-wrap">
                     {meaning}
                 </div>
             </div>

@@ -27,7 +27,7 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
                     <Info className="w-6 h-6 text-amber-400" />
                     Overall Profile Summary
                 </h2>
-                <div className="text-lg text-zinc-300 leading-relaxed font-light whitespace-pre-wrap max-w-2xl">
+                <div className="text-xl text-white/90 leading-relaxed font-light whitespace-pre-wrap max-w-2xl">
                     {generateSummary(results)}
                 </div>
             </section>
@@ -55,19 +55,19 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
                     </div>
                     <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="bg-zinc-900/30 border border-zinc-800 p-4 rounded-xl text-center">
-                            <span className="block text-[10px] text-zinc-500 uppercase mb-1">1st Pinnacle</span>
+                            <span className="block text-[10px] text-white/60 uppercase mb-1">1st Pinnacle</span>
                             <span className="text-3xl font-serif text-amber-400">{results.pinnacles.p1.value}</span>
                         </div>
                         <div className="bg-zinc-900/30 border border-zinc-800 p-4 rounded-xl text-center">
-                            <span className="block text-[10px] text-zinc-500 uppercase mb-1">2nd Pinnacle</span>
+                            <span className="block text-[10px] text-white/60 uppercase mb-1">2nd Pinnacle</span>
                             <span className="text-3xl font-serif text-amber-400">{results.pinnacles.p2.value}</span>
                         </div>
                         <div className="bg-zinc-900/30 border border-zinc-800 p-4 rounded-xl text-center">
-                            <span className="block text-[10px] text-zinc-500 uppercase mb-1">3rd Pinnacle</span>
+                            <span className="block text-[10px] text-white/60 uppercase mb-1">3rd Pinnacle</span>
                             <span className="text-3xl font-serif text-amber-400">{results.pinnacles.p3.value}</span>
                         </div>
                         <div className="bg-zinc-900/30 border border-zinc-800 p-4 rounded-xl text-center">
-                            <span className="block text-[10px] text-zinc-500 uppercase mb-1">4th Pinnacle</span>
+                            <span className="block text-[10px] text-white/60 uppercase mb-1">4th Pinnacle</span>
                             <span className="text-3xl font-serif text-amber-400">{results.pinnacles.p4.value}</span>
                         </div>
                     </div>
@@ -80,12 +80,12 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Challenges */}
                     <div className="space-y-4">
-                        <h3 className="text-sm font-mono text-zinc-500 uppercase mb-4">Challenge Numbers</h3>
+                        <h3 className="text-sm font-mono text-white/60 uppercase mb-4">Challenge Numbers</h3>
                         {Object.entries(results.challenges).map(([key, c]: [string, any]) => (
                             <div key={key} className="flex items-center justify-between bg-zinc-900/30 p-3 rounded-lg border border-zinc-800">
-                                <span className="text-xs text-zinc-400 uppercase">{key.replace('c', 'Challenge ')}</span>
+                                <span className="text-xs text-white/50 uppercase">{key.replace('c', 'Challenge ')}</span>
                                 <div className="flex items-center gap-3">
-                                    <span className="text-[10px] font-mono text-zinc-600">{c.math}</span>
+                                    <span className="text-[10px] font-mono text-white/40">{c.math}</span>
                                     <span className="text-xl font-serif text-amber-400">{c.value}</span>
                                 </div>
                             </div>
@@ -94,11 +94,11 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
 
                     {/* Planes of Expression */}
                     <div className="space-y-4">
-                        <h3 className="text-sm font-mono text-zinc-500 uppercase mb-4">Planes of Expression</h3>
+                        <h3 className="text-sm font-mono text-white/60 uppercase mb-4">Planes of Expression</h3>
                         <div className="grid grid-cols-2 gap-3">
                             {Object.entries(results.planes).map(([plane, count]) => (
                                 <div key={plane} className="bg-zinc-900/30 p-4 rounded-xl border border-zinc-800 text-center">
-                                    <span className="block text-[10px] text-zinc-500 uppercase mb-1">{plane}</span>
+                                    <span className="block text-[10px] text-white/60 uppercase mb-1">{plane}</span>
                                     <span className="text-2xl font-serif text-amber-400">{count}</span>
                                 </div>
                             ))}
@@ -108,17 +108,17 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
 
                 {/* Inclusion Grid */}
                 <div className="mt-12">
-                    <h3 className="text-sm font-mono text-zinc-500 uppercase mb-6 text-center">Inclusion Grid (Frequency)</h3>
+                    <h3 className="text-sm font-mono text-white/60 uppercase mb-4 text-center">Inclusion Grid (Frequency)</h3>
                     <div className="grid grid-cols-3 gap-4 max-w-xs mx-auto">
                         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
                             <div
                                 key={num}
                                 className={`aspect-square flex flex-col items-center justify-center rounded-xl border transition-all ${results.inclusion[num] > 0
-                                        ? 'bg-amber-500/10 border-amber-500/40'
-                                        : 'bg-zinc-900/20 border-zinc-800 opacity-40'
+                                    ? 'bg-amber-500/10 border-amber-500/40'
+                                    : 'bg-zinc-900/20 border-zinc-800 opacity-40'
                                     }`}
                             >
-                                <span className="text-xs text-zinc-500 mb-1">{num}</span>
+                                <span className="text-xs text-white/60 mb-1">{num}</span>
                                 <span className="text-xl font-serif text-amber-400">{results.inclusion[num]}</span>
                             </div>
                         ))}

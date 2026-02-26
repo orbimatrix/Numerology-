@@ -23,9 +23,9 @@ const NumerologyForm = ({ formData, onChange, onSubmit }: NumerologyFormProps) =
             <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                     <div>
-                        <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Full Birth Name</label>
+                        <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Full Birth Name</label>
                         <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                             <input
                                 required
                                 type="text"
@@ -33,33 +33,33 @@ const NumerologyForm = ({ formData, onChange, onSubmit }: NumerologyFormProps) =
                                 value={formData.birthName}
                                 onChange={onChange}
                                 placeholder="As on birth certificate"
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-700"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-white/20 text-white text-lg"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Date of Birth</label>
+                        <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Date of Birth</label>
                         <div className="relative">
-                            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                            <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                             <input
                                 required
                                 type="date"
                                 name="dob"
                                 value={formData.dob}
                                 onChange={onChange}
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors text-zinc-300"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors text-white text-lg"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Current Name (Optional)</label>
+                        <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Current Name (Optional)</label>
                         <input
                             type="text"
                             name="currentName"
                             value={formData.currentName}
                             onChange={onChange}
                             placeholder="If different from birth name"
-                            className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 px-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-700"
+                            className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 px-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-white/20 text-white text-lg"
                         />
                     </div>
                 </div>
@@ -67,51 +67,51 @@ const NumerologyForm = ({ formData, onChange, onSubmit }: NumerologyFormProps) =
                 <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Partner Name</label>
+                            <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Partner Name</label>
                             <input
                                 type="text"
                                 name="partnerName"
                                 value={formData.partnerName}
                                 onChange={onChange}
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 px-4 focus:outline-none focus:border-amber-500/50 transition-colors"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 px-4 focus:outline-none focus:border-amber-500/50 transition-colors text-white text-lg"
                             />
                         </div>
                         <div>
-                            <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Partner DOB</label>
+                            <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Partner DOB</label>
                             <input
                                 type="date"
                                 name="partnerDob"
                                 value={formData.partnerDob}
                                 onChange={onChange}
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 px-4 focus:outline-none focus:border-amber-500/50 transition-colors text-zinc-300"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 px-4 focus:outline-none focus:border-amber-500/50 transition-colors text-white text-lg"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Home Address</label>
+                        <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Home Address</label>
                         <div className="relative">
-                            <Home className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                            <Home className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                             <input
                                 type="text"
                                 name="address"
                                 value={formData.address}
                                 onChange={onChange}
                                 placeholder="Street address for house number"
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-700"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-white/20 text-white text-lg"
                             />
                         </div>
                     </div>
                     <div>
-                        <label className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1.5 ml-1">Phone / Business</label>
+                        <label className="block text-xs uppercase tracking-widest text-white/70 mb-2 ml-1 font-medium">Phone / Business</label>
                         <div className="relative">
-                            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
+                            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                             <input
                                 type="text"
                                 name="business"
                                 value={formData.business}
                                 onChange={onChange}
                                 placeholder="Phone number or business name"
-                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-3 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-zinc-700"
+                                className="w-full bg-black/40 border border-zinc-800 rounded-xl py-4 pl-10 pr-4 focus:outline-none focus:border-amber-500/50 transition-colors placeholder:text-white/20 text-white text-lg"
                             />
                         </div>
                     </div>
