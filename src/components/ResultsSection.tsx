@@ -8,6 +8,20 @@ interface ResultsSectionProps {
     results: any;
 }
 
+// Parses **bold** markdown syntax into React <strong> elements
+const renderBold = (text: string) => {
+    const parts = text.split(/\*\*(.*?)\*\*/g);
+    return parts.map((part, i) =>
+        i % 2 === 1 ? <strong key={i} className="font-semibold text-amber-200">{part}</strong> : part
+    );
+};
+
+// Renders multi-paragraph text with **bold** support
+const renderSummary = (text: string) =>
+    text.split('\n').map((para, i) =>
+        para.trim() ? <p key={i} className="mb-4 last:mb-0">{renderBold(para)}</p> : <br key={i} />
+    );
+
 const ResultsSection = ({ results }: ResultsSectionProps) => {
     if (!results) return null;
 
@@ -27,8 +41,8 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
                     <Info className="w-6 h-6 text-amber-400" />
                     Overall Profile Summary
                 </h2>
-                <div className="text-xl text-white/90 leading-relaxed font-light whitespace-pre-wrap max-w-2xl">
-                    {generateSummary(results)}
+                <div className="text-lg text-white/90 leading-relaxed font-light max-w-2xl">
+                    {renderSummary(generateSummary(results))}
                 </div>
             </section>
 
@@ -129,11 +143,19 @@ const ResultsSection = ({ results }: ResultsSectionProps) => {
             {/* Applied Numerology */}
             <section>
                 <SectionHeader icon={Grid3X3} title="Applied Numerology" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {results.addressNum && <ResultCard title="House / Address Number" result={results.addressNum} category="address" />}
-                    {results.businessNum && <ResultCard title="Phone / Business Number" result={results.businessNum} category="business" />}
-                    {results.compatibility && <ResultCard title="Compatibility Number" result={results.compatibility} category="compatibility" />}
-                </div>
+                {(results.addressNum || results.businessNum || results.compatibility) ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {results.addressNum && <ResultCard title="House / Address Number" result={results.addressNum} category="address" />}
+                        {results.businessNum && <ResultCard title="Phone / Business Number" result={results.businessNum} category="business" />}
+                        {results.compatibility && <ResultCard title="Compatibility Number" result={results.compatibility} category="compatibility" />}
+                    </div>
+                ) : (
+                    <div className="border border-dashed border-zinc-700 rounded-2xl p-8 text-center">
+                        <p className="text-white text-base font-light leading-relaxed">
+                            Fill in the optional fields above — <span className="text-amber-500/60">Home Address</span>, <span className="text-amber-500/60">Phone / Business</span>, or <span className="text-amber-500/60">Partner DOB</span> — to unlock your Applied Numerology readings.
+                        </p>
+                    </div>
+                )}
             </section>
         </motion.div>
     );
