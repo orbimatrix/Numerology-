@@ -53,16 +53,16 @@ const LandingPage = ({ onStart, onPrivacyClick, onTermsClick }: LandingPageProps
                         transition={{ duration: 0.8 }}
                         className="relative z-20"
                     >
-                        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm font-bold uppercase tracking-widest mb-10">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 md:px-5 md:py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs md:text-sm font-bold uppercase tracking-widest mb-8 md:mb-10 text-center">
                             <Sparkles className="w-4 h-4" />
                             Pythagorean System
                         </div>
 
-                        <h1 className="text-7xl md:text-9xl font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-amber-100 to-amber-500/50 mb-8 drop-shadow-lg leading-tight">
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-amber-100 to-amber-500/50 mb-6 md:mb-8 drop-shadow-lg leading-tight">
                             Celestial Numerology
                         </h1>
 
-                        <p className="text-white/80 text-xl md:text-3xl font-light leading-relaxed mb-16 max-w-3xl mx-auto">
+                        <p className="text-white/80 text-lg md:text-2xl lg:text-3xl font-light leading-relaxed mb-12 md:mb-16 max-w-3xl mx-auto px-2">
                             Unlock the hidden vibrations of your name and birth date. Discover your divine blueprint through the ancient science of numbers.
                         </p>
 
@@ -70,10 +70,10 @@ const LandingPage = ({ onStart, onPrivacyClick, onTermsClick }: LandingPageProps
                             onClick={onStart}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-amber-400 text-black font-bold text-xl md:text-2xl px-12 py-6 rounded-full overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.2)] hover:shadow-[0_0_60px_rgba(245,158,11,0.4)] transition-all"
+                            className="group relative inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-amber-600 to-amber-400 text-black font-bold text-lg md:text-xl lg:text-2xl px-8 py-4 md:px-12 md:py-6 rounded-full overflow-hidden shadow-[0_0_40px_rgba(245,158,11,0.2)] hover:shadow-[0_0_60px_rgba(245,158,11,0.4)] transition-all"
                         >
                             <span className="relative z-10">Begin Your Journey</span>
-                            <ArrowRight className="w-6 h-6 md:w-8 md:h-8 relative z-10 group-hover:translate-x-2 transition-transform" />
+                            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 relative z-10 group-hover:translate-x-2 transition-transform" />
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                         </motion.button>
                     </motion.div>
@@ -83,13 +83,13 @@ const LandingPage = ({ onStart, onPrivacyClick, onTermsClick }: LandingPageProps
                 </section>
 
                 {/* Features Section */}
-                <section className="py-24 px-6 max-w-6xl mx-auto relative z-20">
-                    <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-6xl font-serif italic text-amber-100 mb-6">What You Will Discover</h2>
-                        <div className="w-24 h-1 bg-amber-500/50 mx-auto rounded-full" />
+                <section className="py-16 md:py-24 px-6 max-w-6xl mx-auto relative z-20">
+                    <div className="text-center mb-12 md:mb-20">
+                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif italic text-amber-100 mb-4 md:mb-6">What You Will Discover</h2>
+                        <div className="w-16 md:w-24 h-1 bg-amber-500/50 mx-auto rounded-full" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                         {features.map((feature, index) => (
                             <motion.div
                                 key={index}
@@ -97,13 +97,13 @@ const LandingPage = ({ onStart, onPrivacyClick, onTermsClick }: LandingPageProps
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-black/40 backdrop-blur-sm border border-zinc-800 p-10 rounded-[2rem] hover:border-amber-500/30 transition-colors group"
+                                className="bg-black/40 backdrop-blur-sm border border-zinc-800 p-8 md:p-10 rounded-3xl md:rounded-[2rem] hover:border-amber-500/30 transition-colors group"
                             >
-                                <div className="mb-6 p-4 bg-amber-500/10 rounded-2xl inline-block group-hover:scale-110 transition-transform duration-500">
+                                <div className="mb-4 md:mb-6 p-3 md:p-4 bg-amber-500/10 rounded-2xl inline-block group-hover:scale-110 transition-transform duration-500">
                                     {feature.icon}
                                 </div>
-                                <h3 className="text-2xl font-serif text-white/90 mb-4">{feature.title}</h3>
-                                <p className="text-white/60 leading-relaxed text-lg">
+                                <h3 className="text-xl md:text-2xl font-serif text-white/90 mb-3 md:mb-4">{feature.title}</h3>
+                                <p className="text-white/60 leading-relaxed text-base md:text-lg">
                                     {feature.description}
                                 </p>
                             </motion.div>
@@ -112,18 +112,18 @@ const LandingPage = ({ onStart, onPrivacyClick, onTermsClick }: LandingPageProps
                 </section>
 
                 {/* Bottom CTA */}
-                <section className="py-32 px-6 text-center relative z-20 max-w-4xl mx-auto">
+                <section className="py-20 md:py-32 px-4 md:px-6 text-center relative z-20 max-w-4xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="bg-gradient-to-b from-zinc-900/80 to-black border border-zinc-800/50 p-16 md:p-24 rounded-[3rem] shadow-2xl"
+                        className="bg-gradient-to-b from-zinc-900/80 to-black border border-zinc-800/50 p-10 md:p-24 rounded-3xl md:rounded-[3rem] shadow-2xl"
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif italic text-amber-100 mb-8">Ready to decode your destiny?</h2>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic text-amber-100 mb-6 md:mb-8 leading-tight">Ready to decode your destiny?</h2>
                         <button
                             onClick={onStart}
-                            className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold text-xl uppercase tracking-widest border-b-2 border-amber-500/30 hover:border-amber-400 pb-2 transition-all"
+                            className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold text-lg md:text-xl uppercase tracking-widest border-b-2 border-amber-500/30 hover:border-amber-400 pb-2 transition-all mt-4"
                         >
                             Enter the Calculator <ArrowRight className="w-5 h-5" />
                         </button>

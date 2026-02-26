@@ -15,6 +15,7 @@ import ResultsSection from './components/ResultsSection';
 import LandingPage from './components/LandingPage';
 
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 // --- Main App ---
 
@@ -91,6 +92,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-zinc-100 font-sans selection:bg-amber-500/30">
+      {/* Mobile Hamburger Nav – always visible on small screens */}
+      <Navbar
+        onHomeClick={() => setPage('landing')}
+        onPrivacyClick={() => setPage('privacy')}
+        onTermsClick={() => setPage('terms')}
+      />
+
       {/* Background Decorative Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/40 rounded-full blur-[120px]" />
