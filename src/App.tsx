@@ -142,10 +142,10 @@ export default function App() {
                 <Sparkles className="w-3 h-3" />
                 Pythagorean System
               </motion.div>
-              <h1 className="text-6xl md:text-7xl font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-amber-100 to-amber-500/50 mb-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif italic text-transparent bg-clip-text bg-gradient-to-b from-amber-100 to-amber-500/50 mb-4 break-words leading-tight">
                 Celestial Numerology
               </h1>
-              <p className="text-white/80 max-w-lg mx-auto font-light leading-relaxed text-lg">
+              <p className="text-white/80 max-w-lg mx-auto font-light leading-relaxed text-base md:text-lg px-2">
                 Unlock the hidden vibrations of your name and birth date. Discover your divine blueprint through the ancient science of numbers.
               </p>
             </header>
